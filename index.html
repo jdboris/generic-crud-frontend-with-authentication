@@ -1,0 +1,20 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generic CRUD Front-end</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <script type="module">
+        import { newApp } from "./app.js";
+        import { User } from "./user.js";
+
+        let { user } = await User.authenticate();
+        document.querySelector("#app").append(newApp(user));
+      </script>
+    </div>
+  </body>
+</html>
